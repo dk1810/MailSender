@@ -1,11 +1,11 @@
 ﻿namespace MailSender.lib.Data
 {
-    class Server
+    public static class Server
     {
-        public string Address { get; set; }
-        public int Port { get; set; } = 25;
-        public bool UseSSL { get; set; } = true;
-        public string UserName { get; set; }
-        public string Password { get; set; }
+        public static string Address { get; set; } = "smtp.yandex.ru";
+        public static int Port { get; set; } = 25;
+        public static bool UseSSL { get; set; } = true;
+        public static string UserMailAddress { get; set; } = "d.konontsev@yandex.ru";
+        public static string Password { get; set; } = "konontsev111";
     }
 }

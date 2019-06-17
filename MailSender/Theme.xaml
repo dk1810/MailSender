@@ -2543,7 +2543,7 @@
 
 
     <Style d:IsControlPart="True" TargetType="{x:Type TabItem}">
-        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="Padding" Value="10,6,10,6" />
         <Setter Property="MinWidth" Value="5" />
@@ -3605,7 +3605,13 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
-        <Setter Property="Foreground" Value="{DynamicResource OutsideFontColor}" />
+        
+        <Setter Property="Foreground">
+            <Setter.Value>
+                <SolidColorBrush Color="{DynamicResource BlackColor}" />
+            </Setter.Value>
+        </Setter>
+        <!--<Setter Property="Foreground" Value="{DynamicResource OutsideFontColor }" />-->
     </Style>
 
     <Style x:Key="GridViewColumnHeaderGripper" TargetType="{x:Type Thumb}">
