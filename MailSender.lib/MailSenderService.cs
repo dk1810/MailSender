@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MailSender.lib
 {
-    class MailSenderService
+    public static class MailSenderService
     {
     }
 }

@@ -24,7 +24,7 @@ namespace MailSender
     /// </summary>
     public partial class MainWindow : Window
     {
-        DataBase dataBase;
+        private DataBase dataBase;
         public MainWindow()
         {
             InitializeComponent();
@@ -38,20 +38,10 @@ namespace MailSender
         private void LoadMainWindow(object sender, RoutedEventArgs e)
         {
             dataBase = new DataBase();
-            Recipient recipient;
-
-            for (int i = 0; i < 10; i++)
-            {
-                recipient = new Recipient
-                {
-                    Address = $"dk1810+{i}@gmail.com",
-                    Name = $"Имя{i}"
-                };
-                dataBase.Recipients.Add(recipient);
-            }
+            dataBase.FillTestData();            
 
             lstRecipients.ItemsSource = dataBase.Recipients;
-            txtStatus.Text = $"Загружено {dataBase.Recipients.Count} адресов для отправки.";
+            txtStatus.Text = $"Загружено {dataBase.Recipients.Count} адресов для рассылки";
             txtServer.Text = Server.Address;
             txtPort.Text = Server.Port.ToString();
             txtLogin.Text = Server.UserMailAddress;
@@ -87,6 +77,7 @@ namespace MailSender
                 }
             }
             MessageBox.Show("Рассылка завершена!");
+
         }
     }
 }

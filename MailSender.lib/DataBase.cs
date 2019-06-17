@@ -15,5 +15,25 @@ namespace MailSender.lib
         {
             Recipients = new List<Recipient>();
         }
+
+        /// <summary>
+        /// Заполняет DataBase тестовыми данными
+        /// </summary>
+        public void FillTestData()
+        {
+            Recipient recipient;
+
+            for (int i = 0; i < 10; i++)
+            {
+                recipient = new Recipient
+                {
+                    Address = $"dk1810+{i}@gmail.com",
+                    Name = $"Имя{i}"
+                };
+                this.Recipients.Add(recipient);
+            }
+        }
+
     }
+
 }
